@@ -1,0 +1,52 @@
+.board {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    width: 210px;
+    height: 150px;
+    margin: 10px auto;
+
+    border: 1px solid grey;
+    border-radius: 10px;
+    background-color: #efefef;
+}
+
+.inputBlock {
+    margin: 5px;
+}
+
+.inputBlock span {
+    font-family: Arial;
+    font-size: 15px;
+
+    display: inline-block;
+    width: 80px;
+    color: #666;
+}
+.inputFire {
+    border: red;
+}
+.inputBoard {
+    font-family: 'Courier New';
+    font-size: 12px;
+
+    width: 100px;
+    padding: 5px;
+    text-align: center;
+    color: black;
+    border-width: 1px;
+    border-color: lightgrey;
+    border-radius: 7px;
+    background-color: #fff;
+    box-shadow: 0 0 5px rgba(255, 164, 213, .7);
+}
+
+.inputBoard:focus {
+    outline: none;
+}
+
+.inputBoardFire {
+    background-color: #fcdbe1;
+    border-color: red;
+}

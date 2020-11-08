@@ -1,0 +1,48 @@
+.board {
+    width: 210px;
+    height: 150px;
+    margin: 10px auto;
+
+    border: 1px solid grey;
+    border-radius: 10px;
+    background-color: #efefef;
+}
+
+.value {
+    font-family: 'Courier New';
+    font-size: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 150px;
+}
+
+.maxInc {
+    font-family: 'Courier New';
+    font-size: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    height: 150px;
+    color: red;
+}
+
+.text {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    height: 150px;
+}
+
+.errorText {
+    font-weight: 600;
+
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    height: 150px;
+    color: red;
+}
