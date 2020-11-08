@@ -1,8 +1,9 @@
 import React, {ChangeEvent} from 'react'
 import '../../App.css'
-import s from './SetBoard.module.css'
+import s from "./SetBoard.module.css"
 import {Button} from "../Button/Button"
 import {TextType} from "../../App"
+
 
 type SetBoardPropsType = {
     value: number
