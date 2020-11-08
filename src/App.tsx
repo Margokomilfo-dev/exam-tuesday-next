@@ -7,6 +7,7 @@ import {SetBoard} from "./components/SetBoard/SetBoard"
 
 export type TextType = `enter value and press 'set'` | `Incorrect value!`
 
+
 type getValueType = string | null
 export let getMinValue: getValueType = localStorage.getItem('min')
 export let getMaxValue: getValueType = localStorage.getItem('max')
