@@ -20,6 +20,7 @@ export const App: React.FC = () => {
     const [text, setText] = useState <TextType> (`enter value and press 'set'` )
     const [activeMaxValue, setActiveMaxValue] = useState<boolean>(true)
     const [activeMinValue, setActiveMinValue] = useState<boolean>(true)
+    const [board, setBoard] = useState<number>(1)
 
     const setFunc = () => {
         setValue(startValue)
@@ -27,7 +28,7 @@ export const App: React.FC = () => {
         setActiveMaxValue(false)
         localStorage.setItem('max', maximumValue.toString());
         localStorage.setItem('min', startValue.toString());
-
+        board === 1 ? setBoard(2) : setBoard(1)
     }
     const incFunc = () => {
         (value >= startValue && value <= maximumValue) && setValue(value + 1)
@@ -48,29 +49,35 @@ export const App: React.FC = () => {
 
     return (
         <div className={s.project}>
-            <SetBoard value={value} setFunc={setFunc} disabledSetButton={disabledSetButton}
-                      maximumValue={maximumValue}
-                      setMaximumValue={setMaximumValue}
-                      startValue={startValue}
-                      setStartValue={setStartValue}
-                      activeMaxValue={activeMaxValue}
-                      setActiveMaxValue={setActiveMaxValue}
-                      activeMinValue={activeMinValue}
-                      setActiveMinValue={setActiveMinValue}
-                      text={text}
-                      setText={setText}
-            />
-            <div className='counter'>
-                <CountBoard value={value} maxValue={maximumValue} startValue={startValue}
-                            text={text} setText={setText}
-                            activeMaxValue={activeMaxValue} activeMinValue={activeMinValue}
+            {board === 1 ?
+                <SetBoard value={value} setFunc={setFunc} disabledSetButton={disabledSetButton}
+                          maximumValue={maximumValue}
+                          setMaximumValue={setMaximumValue}
+                          startValue={startValue}
+                          setStartValue={setStartValue}
+                          activeMaxValue={activeMaxValue}
+                          setActiveMaxValue={setActiveMaxValue}
+                          activeMinValue={activeMinValue}
+                          setActiveMinValue={setActiveMinValue}
+                          text={text}
+                          setText={setText}
                 />
-                <div className='buttons'>
-                    <Button title={'inc'} buttonFunction={incFunc} value={value} disabledButton={disabledIncButton}/>
-                    <Button title={'reset'} buttonFunction={resFunc} value={value} disabledButton={disabledResButton}/>
+                :
+                <div className='counter'>
+                    <CountBoard value={value} maxValue={maximumValue} startValue={startValue}
+                                text={text} setText={setText}
+                                activeMaxValue={activeMaxValue} activeMinValue={activeMinValue}
+                    />
+                    <div className='buttons'>
+                        <Button title={'inc'} buttonFunction={incFunc} value={value}
+                                disabledButton={disabledIncButton}/>
+                        <Button title={'reset'} buttonFunction={resFunc} value={value}
+                                disabledButton={disabledResButton}/>
+                        <Button title={'set'} buttonFunction={setFunc} value={value}
+                                disabledButton={disabledSetButton}/>
+                    </div>
                 </div>
-            </div>
-
+            }
         </div>
     )
 }
